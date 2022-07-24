@@ -1,5 +1,5 @@
 /**
- * layout.js
+ * layout.tsx
  * Rob Barton
  *
  * Reusable component that defines the page layout site wide.
