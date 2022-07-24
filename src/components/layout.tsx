@@ -4,30 +4,31 @@
  *
  * Reusable component that defines the page layout site wide.
  */
-import Head from "next/head";
-import Footer from "./footer";
-import Navbar from "./navbar";
+import Head from 'next/head';
+import Footer from './footer';
+import Navbar from './navbar';
 
 type LayoutProps = {
-  children: React.ReactNode;
-  pageMetaData: any;
+	children: React.ReactNode;
+	pageMetaData: any;
 };
 
 const Layout = ({ children, pageMetaData }: LayoutProps) => {
-  return (
-    <>
-      <Head>
-        <title>{pageMetaData.title + "| robmakesgam.es"}</title>
-        <meta name="description" content={pageMetaData.desc} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className="flex flex-col justify-between h-screen font-body">
-        <Navbar />
-        <main className="container relative mx-auto">{children}</main>
-        <Footer />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>{pageMetaData.title + '| robmakesgam.es'}</title>
+				<meta name="description" content={pageMetaData.desc} />
+				<link rel="icon" href="/favicon.ico" />
+				<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+			</Head>
+			<div className="flex flex-col px-2 sm:px-4 justify-between h-screen font-body">
+				<Navbar />
+				<main className="container relative mx-auto">{children}</main>
+				<Footer />
+			</div>
+		</>
+	);
 };
 
 export default Layout;
