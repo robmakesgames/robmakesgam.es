@@ -2,7 +2,7 @@
  * navbar.tsx
  * Rob BartonS
  *
- *
+ * Navigation bar component
  */
 
 import Link from "next/link";
