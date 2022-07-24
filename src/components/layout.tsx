@@ -5,6 +5,7 @@
  * Reusable component that defines the page layout site wide.
  */
 import Head from "next/head";
+import Footer from "./footer";
 import Navbar from "./navbar";
 
 type LayoutProps = {
@@ -23,6 +24,7 @@ const Layout = ({ children, pageMetaData }: LayoutProps) => {
       <div className="flex flex-col justify-between h-screen">
         <Navbar />
         <main className="container relative mx-auto">{children}</main>
+        <Footer />
       </div>
     </>
   );
