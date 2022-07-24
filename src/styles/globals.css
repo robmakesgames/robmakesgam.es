@@ -1,3 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Ocra';
+    src: url('../../public/static/OCR-A\ BT.ttf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../../public/static/Roboto-Light.ttf');
+    font-style: normal;
+  }

@@ -21,7 +21,7 @@ const Layout = ({ children, pageMetaData }: LayoutProps) => {
         <meta name="description" content={pageMetaData.desc} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col justify-between h-screen">
+      <div className="flex flex-col justify-between h-screen font-body">
         <Navbar />
         <main className="container relative mx-auto">{children}</main>
         <Footer />
