@@ -12,6 +12,8 @@ import Collapsible from 'react-collapsible';
 import { BiDownArrowAlt } from 'react-icons/bi';
 
 import { projectFrontmatterInterface, projectInterface } from '../common/types';
+import { triggerAsyncId } from 'async_hooks';
+import Icon from './icon';
 
 /**
  * Projects section on home page
@@ -62,20 +64,36 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 				}>
 				<div className="grid grid-cols-1 md:grid-cols-3">
 					{projects.map((item: projectInterface, index: number) => {
-						const projectFrontmatter: projectFrontmatterInterface = item.frontmatter;
+						const projectFrontmatter = item.frontmatter;
+						const projectTags = Object.keys(projectFrontmatter.tags).map(key => [projectFrontmatter.tags[key]]);
+
 						return (
 							<div key={index} className="p-4 lg:p-8">
 								<Link href={`projects/${item.slug}`}>
-									<Image
-										src={`/static/${projectFrontmatter.socialImage}`}
-										width="650"
-										height="400"
-										alt={projectFrontmatter.title}
-									/>
+									<a>
+										<Image
+											src={`/static/${projectFrontmatter.socialImage}`}
+											width="650"
+											height="400"
+											alt={projectFrontmatter.title}
+										/>
+									</a>
 								</Link>
 								<div className="prose-sm md:prose text-center">
-									<h3 className=" mt-0 mb-0">{projectFrontmatter.title}</h3>
-									<p>{projectFrontmatter.description}</p>
+									<h3 className="mt-0 mb-0">{projectFrontmatter.title}</h3>
+									<p className="mt-0 mb-0">{projectFrontmatter.description}</p>
+									<div>
+										{
+											<ul className=" m-0 flex justify-center text-center">
+												{projectTags.map((tag, index) => (
+													<li className="border rounded-full py-2 px-4 mx-2 " key={index}>
+														{tag}
+														<Icon iconString={tag} />
+													</li>
+												))}
+											</ul>
+										}
+									</div>
 								</div>
 							</div>
 						);
