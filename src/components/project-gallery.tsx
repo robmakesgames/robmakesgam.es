@@ -2,28 +2,26 @@
  * project-gallery.js
  * Rob Barton
  *
- * Image gallery to display my projects
+ * Project showcase section
  */
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Collapsible from 'react-collapsible';
-
 import { BiDownArrowAlt } from 'react-icons/bi';
+
 import { projectFrontmatterInterface, projectInterface } from '../common/types';
 
 /**
- *
- * @param param0
- * @returns
+ * Projects section on home page
+ * @param projects Array of projects
  */
 const ProjectShowcase = ({ projects }) => {
 	const games = projects.filter(item => item.frontmatter.category == 'game');
 	const prototypes = projects.filter(item => item.frontmatter.category == 'prototype');
 	const art = projects.filter(item => item.frontmatter.category == 'art');
 	const misc = projects.filter(item => item.frontmatter.category == 'misc');
-
 	return (
 		<>
 			<ProjectShowcaseSection projects={games} title="games" />
@@ -35,11 +33,15 @@ const ProjectShowcase = ({ projects }) => {
 };
 
 /**
- *
- * @param param0
- * @returns
+ * Renders a section of projects based on 1 of 4 categories
+ * 		- 'game'
+ * 		- 'prototype'
+ * 		- 'art'
+ * 		- 'misc'
+ * @param projects array of projects filtered by the category
+ * @param title title of the category
  */
-const ProjectShowcaseSection = ({ projects, title }) => {
+export const ProjectShowcaseSection = ({ projects, title }) => {
 	const [show, setShow] = useState(false);
 	const handleClick = () => {
 		setShow(s => !s);
@@ -63,7 +65,7 @@ const ProjectShowcaseSection = ({ projects, title }) => {
 						const projectFrontmatter: projectFrontmatterInterface = item.frontmatter;
 						return (
 							<div key={index} className="p-4 lg:p-8">
-								<Link href={`project/${item.slug}`}>
+								<Link href={`projects/${item.slug}`}>
 									<Image
 										src={`/static/${projectFrontmatter.socialImage}`}
 										width="650"
@@ -73,7 +75,7 @@ const ProjectShowcaseSection = ({ projects, title }) => {
 								</Link>
 								<div className="prose-sm md:prose text-center">
 									<h3 className=" mt-0 mb-0">{projectFrontmatter.title}</h3>
-									<p>this is a one line description.</p>
+									<p>{projectFrontmatter.description}</p>
 								</div>
 							</div>
 						);

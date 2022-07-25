@@ -4,11 +4,10 @@
  *
  * Website homepage.
  */
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { projectInterface } from '../common/types';
 
 import { pageMetaDataInterface } from '../common/types';
 import Layout from '../components/layout';
@@ -16,10 +15,11 @@ import ProjectShowcase from '../components/project-gallery';
 import Hero from '../components/hero';
 
 /**
- *
- * @returns
+ * Gets all projects stored in /content/projects and returns them
+ * as props
+ * @returns {props} projects as props
  */
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
 	const files = fs.readdirSync(path.join('content/projects'));
 	const projects = files.map(filename => {
 		const slug = filename.replace('.md', '');
@@ -36,18 +36,22 @@ export async function getStaticProps() {
 			projects: projects,
 		},
 	};
-}
+};
 
 /**
  * metadata passed to the Layout component and used
  * in '@next/next-head'
  */
-const indexMetaData: pageMetaDataInterface = {
+export const indexMetaData: pageMetaDataInterface = {
 	title: 'index',
 	desc: 'Personal website portfolio to showcase my game development work',
 };
 
-export default function Home({ projects }: any) {
+/**
+ * Website homepage
+ * @param projects all projects returned from getStaticProps()
+ */
+const Home = ({ projects }) => {
 	return (
 		<Layout pageMetaData={indexMetaData}>
 			<main>
@@ -56,4 +60,6 @@ export default function Home({ projects }: any) {
 			</main>
 		</Layout>
 	);
-}
+};
+
+export default Home;
