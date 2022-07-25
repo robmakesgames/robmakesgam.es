@@ -13,3 +13,10 @@
     src: url('../../public/static/Roboto-Light.ttf');
     font-style: normal;
   }
+
+  *{
+    list-style-type: none;
+   /* // background: linear-gradient(#000, #000) no-repeat center/2px 100%; */
+  }
+  
+  
