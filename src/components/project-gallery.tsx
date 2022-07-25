@@ -45,11 +45,11 @@ const ProjectShowcaseSection = ({ projects, title }) => {
 		setShow(s => !s);
 	};
 	return (
-		<section className="px-2 py-4 text-xl md:text-2xl lg:text-3xl sm:px-4 font-body">
+		<section className="px-2 py-4 text-2xl md:text-3xl sm:px-4 font-body">
 			<Collapsible
 				className="pb-4"
 				trigger={
-					<p onClick={handleClick} className="flex flex-col justify-center items-center text-center">
+					<p onClick={handleClick} className="flex flex-col justify-center font-bold items-center text-center">
 						{title}
 						{show ? (
 							<BiDownArrowAlt className="text-center" style={{ transform: 'rotate(180deg)' }} />
@@ -71,8 +71,8 @@ const ProjectShowcaseSection = ({ projects, title }) => {
 										alt={projectFrontmatter.title}
 									/>
 								</Link>
-								<div className="prose   ">
-									<h3 className="font-bold">{projectFrontmatter.title}</h3>
+								<div className="prose-sm md:prose text-center">
+									<h3 className=" mt-0 mb-0">{projectFrontmatter.title}</h3>
 									<p>this is a one line description.</p>
 								</div>
 							</div>
