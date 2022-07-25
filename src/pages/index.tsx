@@ -13,6 +13,7 @@ import { projectInterface } from '../common/types';
 import { pageMetaDataInterface } from '../common/types';
 import Layout from '../components/layout';
 import ProjectShowcase from '../components/project-gallery';
+import Hero from '../components/hero';
 
 /**
  *
@@ -50,6 +51,7 @@ export default function Home({ projects }: any) {
 	return (
 		<Layout pageMetaData={indexMetaData}>
 			<main>
+				<Hero />
 				<ProjectShowcase projects={projects} />
 			</main>
 		</Layout>
