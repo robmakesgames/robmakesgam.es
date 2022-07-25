@@ -5,12 +5,36 @@
  * Website homepage.
  */
 import type { NextPage } from 'next';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { projectInterface } from '../common/types';
+
 import { pageMetaDataInterface } from '../common/types';
 import Layout from '../components/layout';
-import ProjectGallery from '../components/project-gallery';
+import ProjectShowcase from '../components/project-gallery';
 
-interface PageProps {
-	projects: any;
+/**
+ *
+ * @returns
+ */
+export async function getStaticProps() {
+	const files = fs.readdirSync(path.join('content/projects'));
+	const projects = files.map(filename => {
+		const slug = filename.replace('.md', '');
+		const markdownWithMeta = fs.readFileSync(path.join('content/projects', filename), 'utf-8');
+		const { data: frontmatter } = matter(markdownWithMeta);
+		return {
+			slug,
+			frontmatter,
+		};
+	});
+
+	return {
+		props: {
+			projects: projects,
+		},
+	};
 }
 
 /**
@@ -22,14 +46,12 @@ const indexMetaData: pageMetaDataInterface = {
 	desc: 'Personal website portfolio to showcase my game development work',
 };
 
-const Home: NextPage<PageProps> = () => {
+export default function Home({ projects }: any) {
 	return (
 		<Layout pageMetaData={indexMetaData}>
 			<main>
-				<ProjectGallery />
+				<ProjectShowcase projects={projects} />
 			</main>
 		</Layout>
 	);
-};
-
-export default Home;
+}

@@ -6,7 +6,7 @@ export interface pageMetaDataInterface {
 	desc: string;
 }
 
-export interface projectsInterface {
+export interface projectFrontmatterInterface {
 	title: string;
 	description: string;
 	socialImage: string;
@@ -14,4 +14,9 @@ export interface projectsInterface {
 	category: string;
 	tags: object;
 	links: object;
+}
+
+export interface projectInterface {
+	slug: any;
+	frontmatter: any;
 }

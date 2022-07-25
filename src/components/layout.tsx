@@ -17,7 +17,7 @@ const Layout = ({ children, pageMetaData }: LayoutProps) => {
 	return (
 		<>
 			<Head>
-				<title>{pageMetaData.title + '| robmakesgam.es'}</title>
+				<title>{pageMetaData.title + ' | robmakesgam.es'}</title>
 				<meta name="description" content={pageMetaData.desc} />
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
