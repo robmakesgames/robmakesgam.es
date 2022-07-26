@@ -1,15 +1,15 @@
 ---
-title: 'Pixel Racer'
-description: 'A 2D, top-down, tilebased racing game written in C++ using OpenGL.'
-headerImage: images/pixel_racer_game.png
+title: 'CUDA Real Time Ray Tracer'
+description: 'A real-time ray tracing application built for the GPU using Nvidia's CUDA.'
+headerImage: images/.png
 slideshowImages:
-  - images/pixel_racer_game.png
-  - images/pixel_racer_instructions.png
-  - images/pixel_racer_level_selector.gif
-category: 'game'
+  - images/.png
+  - images/.png
+  - images/.gif
+category: 'prototype'
 tags:
   - C++
-  - OpenGL
+  - CUDA
 links:
   - Github
 ---
