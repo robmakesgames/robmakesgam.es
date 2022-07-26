@@ -13,7 +13,7 @@ const ProjectLinks = ({ projectLinks, projectName }) => {
 	projectLinks.forEach(function (item, index) {
 		if (item.toLowerCase() == 'github') {
 			linkElements.push(
-				<Link href={buildGithubLink(projectName)}>
+				<Link key={index} href={buildGithubLink(projectName)}>
 					<a>
 						<FaGithub />
 					</a>

@@ -75,14 +75,14 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 				<Collapsible
 					className="pb-4"
 					trigger={
-						<p onClick={handleClick} className="flex flex-col items-center justify-center font-bold text-center">
+						<div onClick={handleClick} className="flex flex-col items-center justify-center font-bold text-center">
 							<p>{title}</p>
 							{show ? (
 								<BiDownArrowAlt className="mb-4 text-center xl:mt-2" style={{ transform: 'rotate(180deg)' }} />
 							) : (
 								<BiDownArrowAlt className="mb-4 text-center" />
 							)}
-						</p>
+						</div>
 					}>
 					<div className="grid grid-cols-1 md:grid-cols-3">
 						{projects.map((item: projectInterface, index: number) => {
