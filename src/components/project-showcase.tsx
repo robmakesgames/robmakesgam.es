@@ -72,7 +72,7 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 								<Link href={`projects/${item.slug}`}>
 									<a>
 										<Image
-											src={`/static/${projectFrontmatter.socialImage}`}
+											src={`/static/${projectFrontmatter.headerImage}`}
 											width="650"
 											height="400"
 											alt={projectFrontmatter.title}

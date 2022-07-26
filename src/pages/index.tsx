@@ -11,7 +11,7 @@ import matter from 'gray-matter';
 
 import { pageMetaDataInterface } from '../common/types';
 import Layout from '../components/layout';
-import ProjectShowcase from '../components/project-gallery';
+import ProjectShowcase from '../components/project-showcase';
 import Hero from '../components/hero';
 
 /**
