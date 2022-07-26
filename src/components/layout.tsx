@@ -22,9 +22,9 @@ const Layout = ({ children, pageMetaData }: LayoutProps) => {
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 			</Head>
-			<div className="flex flex-col px-2 sm:px-4 justify-between h-screen font-body">
+			<div className="flex flex-col justify-between h-screen font-body">
 				<Navbar />
-				<main className="container relative mx-auto">{children}</main>
+				<main className="container relative px-2 mx-auto sm:px-4">{children}</main>
 				<Footer />
 			</div>
 		</>
