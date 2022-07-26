@@ -11,9 +11,7 @@ import Image from 'next/image';
 import Collapsible from 'react-collapsible';
 import { BiDownArrowAlt } from 'react-icons/bi';
 
-import { projectFrontmatterInterface, projectInterface } from '../common/types';
-import { triggerAsyncId } from 'async_hooks';
-import Icon from './icon';
+import { projectInterface } from '../common/types';
 
 /**
  * Projects section on home page
@@ -24,6 +22,7 @@ const ProjectShowcase = ({ projects }) => {
 	const prototypes = projects.filter(item => item.frontmatter.category == 'prototype');
 	const art = projects.filter(item => item.frontmatter.category == 'art');
 	const misc = projects.filter(item => item.frontmatter.category == 'misc');
+
 	return (
 		<>
 			<ProjectShowcaseSection projects={games} title="games" />
@@ -48,61 +47,84 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 	const handleClick = () => {
 		setShow(s => !s);
 	};
-	return (
-		<section className="px-2 py-4 text-2xl md:text-3xl sm:px-4 font-body">
-			<Collapsible
-				className="pb-4"
-				trigger={
-					<p onClick={handleClick} className="flex flex-col items-center justify-center font-bold text-center">
-						{title}
-						{show ? (
-							<BiDownArrowAlt className="text-center" style={{ transform: 'rotate(180deg)' }} />
-						) : (
-							<BiDownArrowAlt />
-						)}
-					</p>
-				}>
-				<div className="grid grid-cols-1 md:grid-cols-3">
-					{projects.map((item: projectInterface, index: number) => {
-						const projectFrontmatter = item.frontmatter;
-						const projectTags = Object.keys(projectFrontmatter.tags).map(key => [projectFrontmatter.tags[key]]);
 
-						return (
-							<div key={index} className="p-4 lg:p-8">
-								<Link href={`projects/${item.slug}`}>
-									<a>
-										<Image
-											src={`/static/${projectFrontmatter.headerImage}`}
-											width="650"
-											height="400"
-											alt={projectFrontmatter.title}
-										/>
-									</a>
-								</Link>
-								<div className="prose-sm text-center lg:prose">
-									<h3 className="mt-0 mb-0">{projectFrontmatter.title}</h3>
-									<p className="mt-0 mb-0">{projectFrontmatter.description}</p>
-									<div>
-										{
-											<ul className="flex justify-center m-0 ">
-												{projectTags.map((tag, index) => (
-													<li
-														className="inline-flex items-center px-3 py-1 mx-2 my-4 text-xs font-bold border rounded-full leading-sm"
-														key={index}>
-														{tag}
-													</li>
-												))}
-											</ul>
-										}
+	if (projects.length == 0) {
+		return (
+			<section className="px-2 py-4 text-2xl md:text-3xl sm:px-4 font-body">
+				<Collapsible
+					className="pb-4"
+					trigger={
+						<p onClick={handleClick} className="flex flex-col items-center justify-center font-bold text-center">
+							{title}
+							{show ? (
+								<BiDownArrowAlt className="text-center" style={{ transform: 'rotate(180deg)' }} />
+							) : (
+								<BiDownArrowAlt />
+							)}
+						</p>
+					}>
+					<div className="py-4 mx-auto prose-sm text-center md:py-8 lg:prose">
+						<p>currently there are no projects here :(</p>
+					</div>
+				</Collapsible>
+			</section>
+		);
+	} else {
+		return (
+			<section className="px-2 py-4 text-2xl md:text-3xl sm:px-4 font-body">
+				<Collapsible
+					className="pb-4"
+					trigger={
+						<p onClick={handleClick} className="flex flex-col items-center justify-center font-bold text-center">
+							<p>{title}</p>
+							{show ? (
+								<BiDownArrowAlt className="mb-4 text-center xl:mt-2" style={{ transform: 'rotate(180deg)' }} />
+							) : (
+								<BiDownArrowAlt className="mb-4 text-center" />
+							)}
+						</p>
+					}>
+					<div className="grid grid-cols-1 md:grid-cols-3">
+						{projects.map((item: projectInterface, index: number) => {
+							const projectFrontmatter = item.frontmatter;
+							const projectTags = Object.keys(projectFrontmatter.tags).map(key => [projectFrontmatter.tags[key]]);
+							return (
+								<div key={index} className="md:p-4 lg:p-8">
+									<Link href={`projects/${item.slug}`}>
+										<a>
+											<Image
+												src={`/static/${projectFrontmatter.headerImage}`}
+												width="650"
+												height="400"
+												alt={projectFrontmatter.title}
+											/>
+										</a>
+									</Link>
+									<div className="prose-sm text-center lg:prose">
+										<h3 className="mt-0 mb-0 font-bold">{projectFrontmatter.title}</h3>
+										<p className="mt-0 mb-0">{projectFrontmatter.description}</p>
+										<div>
+											{
+												<ul className="flex justify-center ">
+													{projectTags.map((tag, index) => (
+														<li
+															className="inline-flex items-center px-3 py-1 mx-2 my-4 text-xs font-bold border rounded-full leading-sm"
+															key={index}>
+															{tag}
+														</li>
+													))}
+												</ul>
+											}
+										</div>
 									</div>
 								</div>
-							</div>
-						);
-					})}
-				</div>
-			</Collapsible>
-		</section>
-	);
+							);
+						})}
+					</div>
+				</Collapsible>
+			</section>
+		);
+	}
 };
 
 export default ProjectShowcase;

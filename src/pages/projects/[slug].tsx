@@ -78,7 +78,7 @@ const ProjectPage = ({ frontmatter, content }) => {
 				</div>
 				<div className="w-full prose">
 					{/* header section */}
-					<div className="flex flex-col items-center pt-12 pb-4 text-center xl:prose-lg font-body">
+					<div className="flex flex-col items-center pt-4 text-center lg:pt-8 xl:prose-lg font-body">
 						<h3 className="font-bold">{frontmatter.title}</h3>
 						<p>{frontmatter.description}</p>
 						<div>
@@ -87,13 +87,13 @@ const ProjectPage = ({ frontmatter, content }) => {
 					</div>
 					{/* body section */}
 					<div className="flex flex-col py-4 mx-auto font-roboto">
-						<p dangerouslySetInnerHTML={{ __html: md().render(content) }}></p>
+						<p className="mb-0" dangerouslySetInnerHTML={{ __html: md().render(content) }} />
 						<div>
 							{
-								<ul className="flex justify-center">
+								<ul className="flex justify-center m-0">
 									{projectTags.map((tag, index) => (
 										<li
-											className="inline-flex items-center px-3 py-1 mx-2 my-4 text-sm font-bold border rounded-full leading-sm"
+											className="inline-flex items-center px-3 py-1 mx-2 text-sm font-bold border rounded-full leading-sm"
 											key={index}>
 											{tag}
 										</li>
@@ -102,7 +102,7 @@ const ProjectPage = ({ frontmatter, content }) => {
 							}
 						</div>
 					</div>
-					<div className="pb-8 md:pb-12 lg:pb-16 xl:pb-24">
+					<div className="pb-8 mt-8 lg:mt-16 md:pb-12 lg:pb-16 xl:pb-24">
 						<ImageSlideshow slideshowImageList={frontmatter.slideshowImages} />
 					</div>
 				</div>
