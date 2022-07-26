@@ -8,7 +8,7 @@ slideshowImages:
   - images/pixel_racer_level_selector.gif
 category: 'game'
 tags:
-  - CPP
+  - C++
   - OpenGL
 links:
   - Github

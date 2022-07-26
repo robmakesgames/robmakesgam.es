@@ -53,7 +53,7 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 			<Collapsible
 				className="pb-4"
 				trigger={
-					<p onClick={handleClick} className="flex flex-col justify-center font-bold items-center text-center">
+					<p onClick={handleClick} className="flex flex-col items-center justify-center font-bold text-center">
 						{title}
 						{show ? (
 							<BiDownArrowAlt className="text-center" style={{ transform: 'rotate(180deg)' }} />
@@ -79,16 +79,17 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 										/>
 									</a>
 								</Link>
-								<div className="prose-sm md:prose text-center">
+								<div className="prose-sm text-center lg:prose">
 									<h3 className="mt-0 mb-0">{projectFrontmatter.title}</h3>
 									<p className="mt-0 mb-0">{projectFrontmatter.description}</p>
 									<div>
 										{
-											<ul className=" m-0 flex justify-center text-center">
+											<ul className="flex justify-center m-0 ">
 												{projectTags.map((tag, index) => (
-													<li className="border rounded-full py-2 px-4 mx-2 " key={index}>
+													<li
+														className="inline-flex items-center px-3 py-1 mx-2 my-4 text-xs font-bold border rounded-full leading-sm"
+														key={index}>
 														{tag}
-														<Icon iconString={tag} />
 													</li>
 												))}
 											</ul>

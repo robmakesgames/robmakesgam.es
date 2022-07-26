@@ -11,6 +11,7 @@ import md from 'markdown-it';
 
 import Layout from '../../components/layout';
 import { pageMetaDataInterface } from '../../common/types';
+import ProjectLinks from '../../components/project-links';
 
 /**
  * Pre render all project paths
@@ -56,6 +57,8 @@ const ProjectPage = ({ frontmatter, content }) => {
 	 * metadata passed to the Layout component and used
 	 * in '@next/next-head'
 	 */
+	const projectTags = Object.keys(frontmatter.tags).map(key => [frontmatter.tags[key]]);
+
 	const projectPageMetaData: pageMetaDataInterface = {
 		title: `${frontmatter.title}`,
 		desc: `${frontmatter.description}`,
@@ -74,15 +77,31 @@ const ProjectPage = ({ frontmatter, content }) => {
 						height={800}
 					/>
 				</div>
-				<div className="w-full prose xl:prose-lg prose-ul:p-0 xl:prose-ul:p-0 prose-li:p-0 xl:prose-li:p-0 prose-h3:m-0 xl:prose-h3:m-0 prose-p:m-0 xl:prose-p:m-0">
+				<div className="w-full prose">
 					{/* header section */}
-					<div className="flex flex-col items-center pt-12 pb-4 text-center font-body">
-						<h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl">{frontmatter.title}</h3>
+					<div className="flex flex-col items-center pt-12 pb-4 text-center xl:prose-lg font-body">
+						<h3 className="font-bold">{frontmatter.title}</h3>
 						<p>{frontmatter.description}</p>
+						<div>
+							<ProjectLinks projectLinks={frontmatter.links} projectName={frontmatter.title} />
+						</div>
 					</div>
 					{/* body section */}
-					<div className="flex flex-col py-4 font-roboto">
+					<div className="flex flex-col py-4 mx-auto font-roboto">
 						<p dangerouslySetInnerHTML={{ __html: md().render(content) }}></p>
+						<div>
+							{
+								<ul className="flex justify-center">
+									{projectTags.map((tag, index) => (
+										<li
+											className="inline-flex items-center px-3 py-1 mx-2 my-4 text-sm font-bold border rounded-full leading-sm"
+											key={index}>
+											{tag}
+										</li>
+									))}
+								</ul>
+							}
+						</div>
 					</div>
 				</div>
 			</section>
