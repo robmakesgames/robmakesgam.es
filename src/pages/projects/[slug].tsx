@@ -8,11 +8,10 @@ import Image from 'next/image';
 import fs from 'fs';
 import matter from 'gray-matter';
 import md from 'markdown-it';
-
 import Layout from '../../components/layout';
 import { pageMetaDataInterface } from '../../common/types';
 import ProjectLinks from '../../components/project-links';
-
+import ImageSlideshow from '../../components/image-slideshow';
 /**
  * Pre render all project paths
  * @returns {path, fallback}
@@ -70,7 +69,7 @@ const ProjectPage = ({ frontmatter, content }) => {
 				<div className="block w-full h-auto">
 					<Image
 						className="h-8"
-						src={'/static/' + frontmatter.socialImage}
+						src={'/static/' + frontmatter.headerImage}
 						alt="Picture of the author"
 						layout={'responsive'}
 						width={1500}
@@ -102,6 +101,9 @@ const ProjectPage = ({ frontmatter, content }) => {
 								</ul>
 							}
 						</div>
+					</div>
+					<div className="pb-8 md:pb-12 lg:pb-16 xl:pb-24">
+						<ImageSlideshow slideshowImageList={frontmatter.slideshowImages} />
 					</div>
 				</div>
 			</section>
