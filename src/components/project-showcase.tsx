@@ -97,6 +97,7 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 												width="650"
 												height="400"
 												alt={projectFrontmatter.title}
+												priority
 											/>
 										</a>
 									</Link>
