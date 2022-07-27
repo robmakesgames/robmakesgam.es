@@ -88,19 +88,19 @@ const ProjectPage = ({ frontmatter, content }) => {
 					{/* body section */}
 					<div className="flex flex-col py-4 mx-auto font-roboto">
 						<p className="mb-0" dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-						<div>
+						{/* <div>
 							{
-								<ul className="flex justify-center m-0">
+								<ul className="flex justify-center py-0 my-0">
 									{projectTags.map((tag, index) => (
 										<li
-											className="inline-flex items-center px-3 py-1 mx-2 text-sm font-bold border rounded-full leading-sm"
+											className="flex items-center px-3 py-1 mx-4 text-sm font-bold border rounded-full leading-sm"
 											key={index}>
 											{tag}
 										</li>
 									))}
 								</ul>
 							}
-						</div>
+						</div> */}
 					</div>
 					<div className="pb-8 mt-8 lg:mt-16 md:pb-12 lg:pb-16 xl:pb-24">
 						<ImageSlideshow slideshowImageList={frontmatter.slideshowImages} />
