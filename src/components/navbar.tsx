@@ -12,7 +12,7 @@ const Navbar = () => {
 		<nav className="sticky top-0 z-50  px-2 sm:px-4  py-2.5 bg-white rounded border-gray-200  dark:bg-gray-800">
 			<div className="container flex items-center justify-between mx-auto">
 				<Link href="/">
-					<a className="flex items-center">
+					<a aria-label="index" className="flex items-center">
 						<span className="self-center text-2xl font-semibold whitespace-nowrap md:text-4xl font-title dark:text-white">
 							RB
 						</span>
@@ -22,7 +22,7 @@ const Navbar = () => {
 					<ul className="flex flex-row mt-0 space-x-8 text-sm md:font-medium">
 						<li>
 							<Link href="mailto:hello@robmakesgam.es">
-								<a className="block text-gray-700 bg-transparent">
+								<a aria-label="email" className="block text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
 										xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link href="https://www.github.com/rob4everever">
-								<a className="block text-gray-700 bg-transparent">
+								<a aria-label="github" className="block text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
 										xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link href="https://www.instagram.com/robbatr0n">
-								<a className="block text-gray-700 bg-transparent">
+								<a aria-label="instagram" className="block text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
 										xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,10 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li>
-							<a href="https://www.linkedin.com/in/robbatr0n" className="block text-gray-700 bg-transparent">
+							<a
+								aria-label="linkedin"
+								href="https://www.linkedin.com/in/robbatr0n"
+								className="block text-gray-700 bg-transparent">
 								<svg
 									className="w-6 h-6 fill-current md:w-8 md:h-8"
 									xmlns="http://www.w3.org/2000/svg"

@@ -29,7 +29,7 @@ const Footer = () => {
 						</li>
 						<li className="flex py-2">
 							<Link href={'https:www.github.com/rob4everever'}>
-								<a className="text-gray-700 bg-transparent">
+								<a aria-label="email" className="text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
 										xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const Footer = () => {
 						</li>
 						<li className="flex py-2">
 							<Link href={'https://www.instagram.com/robbatr0n'}>
-								<a className="text-gray-700 bg-transparent">
+								<a aria-label="instagram" className="text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
 										xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const Footer = () => {
 						</li>
 						<li className="flex py-2">
 							<Link href={'www.linkedin.com/in/robbatr0n'}>
-								<a className="text-gray-700 bg-transparent">
+								<a aria-label="linkedin" className="text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
 										xmlns="http://www.w3.org/2000/svg"
