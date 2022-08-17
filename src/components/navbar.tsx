@@ -9,13 +9,11 @@ import Link from 'next/link';
 
 const Navbar = () => {
 	return (
-		<nav className="sticky top-0 z-50  px-2 sm:px-4  py-2.5 bg-white rounded border-gray-200  dark:bg-gray-800">
+		<nav className="sticky top-0 z-50  px-2 sm:px-4  py-2.5 bg-white rounded border-gray-200 ">
 			<div className="container flex items-center justify-between mx-auto">
 				<Link href="/">
 					<a aria-label="index" className="flex items-center">
-						<span className="self-center text-2xl font-semibold whitespace-nowrap md:text-4xl font-title dark:text-white">
-							RB
-						</span>
+						<span className="self-center text-2xl font-semibold whitespace-nowrap md:text-4xl font-title">RB</span>
 					</a>
 				</Link>
 				<div className="block w-auto">
@@ -33,7 +31,7 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li>
-							<Link href="https://www.github.com/rob4everever">
+							<Link href="https://github.com/robmakesgames">
 								<a aria-label="github" className="block text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
@@ -45,7 +43,7 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li>
-							<Link href="https://www.instagram.com/robbatr0n">
+							<Link href="https://www.instagram.com/robmakesgam.es">
 								<a aria-label="instagram" className="block text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"

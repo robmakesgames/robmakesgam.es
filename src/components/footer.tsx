@@ -10,12 +10,12 @@ const Footer = () => {
 	let date = new Date();
 	let year = date.getFullYear();
 	return (
-		<footer className="px-2 py-4 bg-white border border-gray-100 md:py-8 lg:py-12 xl:py-16 dark:bg-gray-800 font-body">
+		<footer className="px-2 py-4 bg-white border border-gray-100 md:py-8 lg:py-12 xl:py-16 font-body">
 			<div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
 				<div>
 					<ul>
 						<li className="flex py-2">
-							<Link href="mailto:hello@robmakesgame.es">
+							<Link href="mailto:hello@robmakesgam.es">
 								<a className="text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
@@ -25,10 +25,10 @@ const Footer = () => {
 									</svg>
 								</a>
 							</Link>
-							<p className="ml-4">hello@robbatron.me</p>
+							<p className="ml-4">hello@robmakesgam.es</p>
 						</li>
 						<li className="flex py-2">
-							<Link href={'https:www.github.com/rob4everever'}>
+							<Link href={'https://github.com/robmakesgames'}>
 								<a aria-label="email" className="text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
@@ -38,10 +38,10 @@ const Footer = () => {
 									</svg>
 								</a>
 							</Link>
-							<p className="ml-4">rob4everever</p>
+							<p className="ml-4">robmakesgames</p>
 						</li>
 						<li className="flex py-2">
-							<Link href={'https://www.instagram.com/robbatr0n'}>
+							<Link href={'https://www.instagram.com/robmakesgam.es'}>
 								<a aria-label="instagram" className="text-gray-700 bg-transparent">
 									<svg
 										className="w-6 h-6 fill-current md:w-8 md:h-8"
@@ -51,7 +51,7 @@ const Footer = () => {
 									</svg>
 								</a>
 							</Link>
-							<p className="ml-4">robbatr0n_</p>
+							<p className="ml-4">robmakesgam.es</p>
 						</li>
 						<li className="flex py-2">
 							<Link href={'www.linkedin.com/in/robbatr0n'}>
