@@ -13,3 +13,5 @@ tags:
 links:
   - Github
 ---
+
+This game was my first attempt at building a game without an engine - using C++ and OpenGL.
