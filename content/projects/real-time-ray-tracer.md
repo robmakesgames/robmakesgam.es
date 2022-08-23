@@ -1,5 +1,5 @@
 ---
-title: 'Real-time Ray Tracer'
+title: 'CUDA Real Time Ray Tracer'
 description: 'A ray tracer capable of rendering 3D scenes in real time. Built using CUDA and C++'
 headerImage: images/cuda_real_time_ray_tracer_cover.png
 slideshowImages:
