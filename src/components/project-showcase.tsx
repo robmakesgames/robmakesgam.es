@@ -101,12 +101,12 @@ export const ProjectShowcaseSection = ({ projects, title }) => {
 											/>
 										</a>
 									</Link>
-									<div className="prose-sm text-center lg:prose">
+									<div className="prose-sm text-center lg:prose prose-sm:p-0 prose:p-0">
 										<h3 className="mt-0 mb-0 font-bold">{projectFrontmatter.title}</h3>
 										<p className="mt-0 mb-0">{projectFrontmatter.description}</p>
 										<div>
 											{
-												<ul className="flex justify-center ">
+												<ul className="flex justify-center">
 													
 													{projectTags.map((tag, index) => (
 														<li

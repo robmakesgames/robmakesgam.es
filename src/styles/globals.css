@@ -3,20 +3,18 @@
 @import 'tailwindcss/utilities';
 
 @font-face {
-    font-family: 'Ocra';
-    src: url('../../public/static/OCR-A\ BT.ttf');
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../../public/static/Roboto-Light.ttf');
-    font-style: normal;
-  }
+  font-family: 'Ocra';
+  src: url('../../public/static/OCR-A\ BT.ttf');
+  font-style: normal;
+}
 
-  *{
-    list-style-type: none;
-    /* background: linear-gradient(#000, #000) no-repeat center/2px 100%; */
-  }
-  
-  
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../public/static/Roboto-Light.ttf');
+  font-style: normal;
+}
+
+* {
+  list-style-type: none;
+  background: linear-gradient(#000, #000) no-repeat center/2px 100%;
+}
