@@ -27,7 +27,7 @@ const ProjectLinks = ({ projectLinks, projectName }) => {
 };
 
 function buildGithubLink(projectName) {
-	return `https://www.github.com/robmakesgam.es/${projectName.split(' ').join('-')}`;
+	return `https://www.github.com/robmakesgames/${projectName.split(' ').join('-')}`;
 }
 
 export default ProjectLinks;
